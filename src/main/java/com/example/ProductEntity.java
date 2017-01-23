@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapKeyColumn;
+import javax.persistence.Transient;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -45,5 +46,10 @@ public class ProductEntity {
 
     public void setName(Map<Locale, LocalizedValue> name) {
         this.name = name;
+    }
+
+    @Transient
+    public String getA() {
+        return "a";
     }
 }
