@@ -54,7 +54,7 @@ public class DemoConfigurerAdapter extends RepositoryRestConfigurerAdapter {
 
                 SimpleDeserializers deserializers = new SimpleDeserializers();
 
-                deserializers.addDeserializer(Map.class, new LocalizableMapDeserializer());
+                //deserializers.addDeserializer(Map.class, new LocalizableMapDeserializer());
                 deserializers.addDeserializer(LocalizedValue.class, new LocalizedValueDeserializer());
                 deserializers.addDeserializer(Locale.class, new LocaleDeserializer());
 

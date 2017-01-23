@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
+import org.apache.commons.lang3.LocaleUtils;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -15,7 +16,7 @@ import java.util.Locale;
 public class LocaleDeserializer extends JsonDeserializer<Locale> {
     @Override
     public Locale deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-        return Locale.ENGLISH;
+        return LocaleUtils.toLocale(jp.getValueAsString());
     }
 }
 
